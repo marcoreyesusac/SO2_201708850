@@ -1,0 +1,7 @@
+#!/usr/bin/stap
+
+probe syscall.* {
+    printf("Proceso %d: Llamada a %s en %s\n", pid(), probefunc(), ctime(gettimeofday_s()));
+}
+
+
